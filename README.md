@@ -50,10 +50,10 @@ Implemented with 3–4 different combinations of:
 
 | Instance | Optimizer | Reg. | Epochs | Early Stop | Layers | LR | Accuracy | F1 | Precision | Recall |
 |----------|-----------|------|--------|------------|--------|----|----------|----|-----------|--------|
-| 1        | Default   | None | 30     | No         | 1      | Default | 0.8467 | 0.8357 |0.9000|0.7800 |
-| 2        | Adam      | L2   | 50     | Yes        | 2      | 0.001 | 0.8433 | 0.8374 |0.8705| 0.8067 |
-| 3        | RMSprop   | L1   | 60     | Yes        | 3      | 0.0005 | 0.8400 | 0.8345 |0.8643| 0.8067|
-| 4        | Adam      | L1_L2| 70     | Yes        | 2      | 0.0001 | 0.8400 | 0.8345 |0.8643|0.8067 |
+| 1        | Default   | None | 30     | No         | 1      | Default | 0.43 | 0.56 |0.43|0.81|
+| 2        | Adam      | L2   | 50     | Yes        | 2      | 0.001 | 0.49 | 0.54 |0.46| 0.65 |
+| 3        | RMSprop   | L1   | 60     | Yes        | 3      | 0.0005 | 0.54| 0.00 |0.00| 0.00|
+| 4        | Adam      | L1_L2| 70     | Yes        | 2      | 0.0001 | 0.52 | 0.38 |0.46|0.31 |
 
 ---
 
@@ -62,17 +62,6 @@ Implemented with 3–4 different combinations of:
 
 - **Neural Network with Adam optimizer, L1_L2 regularization, dropout, and early stopping**
 - Outperformed all classical models in both accuracy and F1 score
-
----
-
-## 🤖 ML Algorithm Comparison
-
-| Model              | Tuned Params               | Accuracy | F1 Score |
-|-------------------|----------------------------|----------|----------|
-| Logistic Regression | C=1.0, penalty='l2'        | 0.81     | 0.80     |
-| SVM               | kernel='rbf', C=10          | 0.84     | 0.83     |
-| XGBoost           | max_depth=3, lr=0.1         | 0.88     | 0.87     |
-| **Best NN Model** | Adam, L1_L2, dropout, early stop | **0.90** | **0.89** |
 
 ---
 
@@ -91,19 +80,14 @@ The final saved model was loaded and used to make predictions on unseen test dat
 project_sales_forecasting/
 ├── notebook.ipynb
 ├── README.md
-├── saved_models/
-│   ├── base_model.h5
-│   ├── model_adam_l2.h5
-│   ├── model_rmsprop_l1.h5
-│   ├── model_adam_l1l2_dropout.h5
-│   └── logistic_regression_model.pkl
+
 ```
 
 ## 🧭 How to Run the Notebook
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/Amandine0610/SUMMATIVE-ASSESSMENR.git
+git clone https://github.com/Amandine0610.
 ```
 
 2. Open the Jupyter Notebook:
