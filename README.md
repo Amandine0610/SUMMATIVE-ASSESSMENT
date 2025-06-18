@@ -21,7 +21,6 @@ The dataset was split into:
 - **Test Set**: ~15%
 
 ---
-
 ## 🧠 Model Implementations
 
 ### 1. Baseline Neural Network (No Optimization)
@@ -104,7 +103,7 @@ project_sales_forecasting/
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/yourusername/project_sales_forecasting.git
+git clone https://github.com/Amandine0610/SUMMATIVE-ASSESSMENR.git
 ```
 
 2. Open the Jupyter Notebook:
@@ -113,4 +112,12 @@ jupyter notebook notebook.ipynb
 ```
 
 3. Run cells in order. Trained models will be saved in `saved_models/`.
+
+👤 Author
+
+Amandine Irakoze
+
+African Leadership University – BSE
+
+Course: Introduction to Machine Learning
 
