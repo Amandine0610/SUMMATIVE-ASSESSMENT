@@ -94,9 +94,12 @@ project_sales_forecasting/
 ├── Summative_Intro_to_ml_[AmandineIrakoze]_assignment.ipynb
 ├── README.md
 ├── saved_models/
+│   ├──logistic_regression.joblib
+│   ├──xgboost.joblib
 │   ├──scaler.joblib
 ├── optimization_results.csv
 ├── Ecommerce_Sales_Prediction_Dataset (1).csv
+├── classical_ml_results.csv
 
 
 
