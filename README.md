@@ -113,7 +113,7 @@ jupyter notebook notebook.ipynb
 
 3. Run cells in order. Trained models will be saved in `saved_models/`.
 
-👤 Author
+# 👤 Author
 
 Amandine Irakoze
 
