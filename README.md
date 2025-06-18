@@ -78,8 +78,14 @@ The final saved model was loaded and used to make predictions on unseen test dat
 
 ```
 project_sales_forecasting/
-├── notebook.ipynb
+├── Summative_Intro_to_ml_[AmandineIrakoze]_assignment.ipynb
 ├── README.md
+├── saved_models/
+│   ├──scaler.joblib
+├── optimization_results.csv
+├── Ecommerce_Sales_Prediction_Dataset (1).csv
+
+
 
 ```
 
@@ -87,12 +93,13 @@ project_sales_forecasting/
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/Amandine0610.
+git clone https://github.com/Amandine0610/project_sales_forecasting.git
 ```
 
 2. Open the Jupyter Notebook:
 ```bash
-jupyter notebook notebook.ipynb
+jupyter notebook Summative_Intro_to_ml_[AmandineIrakoze]_assignment.ipynb
+
 ```
 
 3. Run cells in order. Trained models will be saved in `saved_models/`.
