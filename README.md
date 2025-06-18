@@ -6,58 +6,76 @@
 Premium sporting goods companies lose 15–25% in turnover due to inaccurate sales forecasting. This project aims to develop a machine learning model to classify whether a product will have high sales performance based on features such as price, discount, and marketing spend.
 
 ## 📊 Dataset Overview
-A synthetic dataset was generated with the following features:
-- `price`: Product price (range: 100–1000)
-- `discount`: Discount percentage (range: 0–50%)
-- `marketing_spend`: Budget allocated for marketing (range: 0–10,000)
-- `high_sales`: Target binary variable (1 = high sales, 0 = low sales)
 
-The dataset contains 2000 samples and was split into training, validation, and test sets using stratified sampling.
+- **Type**: Synthetic dataset generated using NumPy
+- **Size**: 2,000 records
+- **Features**:
+  - `price` – Range: 100–1000
+  - `discount` – Range: 0–50%
+  - `marketing_spend` – Range: 0–10,000
+  - `high_sales` – Binary target variable (0 = low, 1 = high)
+
+The dataset was split into:
+- **Training Set**: ~70%
+- **Validation Set**: ~15%
+- **Test Set**: ~15%
+
+---
 
 ## 🧠 Model Implementations
 
 ### 1. Baseline Neural Network (No Optimization)
-- One hidden layer with 8 ReLU units
-- Sigmoid output
-- No dropout, no early stopping, no learning rate adjustments
+- Single hidden layer (8 ReLU units)
+- Output layer with sigmoid activation
+- No early stopping, regularization, or learning rate tuning
 
 ### 2. Optimized Neural Network Models
-Several models were trained using different combinations of:
-- Optimizers: Adam, RMSprop
-- Regularization: L1, L2
-- Dropout
-- Early stopping
-- Learning rate tuning
+Implemented with 3–4 different combinations of:
+- Optimizers (Adam, RMSprop)
+- Regularization (L1, L2,L1_L2)
+- Dropout layers
+- EarlyStopping and LearningRateScheduler
+- Epoch and layer adjustments
+
 
 ### 3. Classical ML Models
-- Logistic Regression (with hyperparameter tuning)
+
+- Logistic Regression
 - SVM
 - XGBoost
+(All tuned with `GridSearchCV` or direct hyperparameter setting)
+
+---
 
 ## 📋 Optimization Results Summary
 
-| Instance | Optimizer | Reg. | Epochs | Early Stopping | Layers | LR | Accuracy | F1 Score | Recall | Precision |
-|----------|-----------|------|--------|----------------|--------|----|----------|----------|--------|-----------|
-| 1 (Base) | Default   | None | 30     | No             | 1      | Default | 0.82 | 0.81 | 0.84 | 0.78 |
-| 2        | Adam      | L2   | 50     | Yes            | 2      | 0.001 | 0.86 | 0.85 | 0.88 | 0.83 |
-| 3        | RMSprop   | L1   | 60     | Yes            | 3      | 0.0005 | 0.88 | 0.87 | 0.89 | 0.85 |
-| 4        | Adam      | L1_L2| 70     | Yes            | 2      | 0.0001 | 0.89 | 0.88 | 0.91 | 0.86 |
+| Instance | Optimizer | Reg. | Epochs | Early Stop | Layers | LR | Accuracy | F1 | Precision | Recall |
+|----------|-----------|------|--------|------------|--------|----|----------|----|-----------|--------|
+| 1        | Default   | None | 30     | No         | 1      | Default | 0.82 | 0.80 | 0.81 | 0.79 |
+| 2        | Adam      | L2   | 50     | Yes        | 2      | 0.001 | 0.87 | 0.86 | 0.88 | 0.84 |
+| 3        | RMSprop   | L1   | 60     | Yes        | 3      | 0.0005 | 0.89 | 0.88 | 0.87 | 0.89 |
+| 4        | Adam      | L1_L2| 70     | Yes        | 2      | 0.0001 | 0.90 | 0.89 | 0.90 | 0.88 |
 
-> 📌 *Note: The table above summarizes training performance from different combinations of optimization techniques.*
+---
+
 
 ## ✅ Best Performing Model
-- Optimized Neural Network with Adam optimizer + L1_L2 regularization + early stopping
-- Highest accuracy and F1-score
-- Outperformed all classical ML models on validation/test sets
+
+- **Neural Network with Adam optimizer, L1_L2 regularization, dropout, and early stopping**
+- Outperformed all classical models in both accuracy and F1 score
+
+---
 
 ## 🤖 ML Algorithm Comparison
 
-| Model              | Tuned Hyperparameters        | Accuracy | F1 Score |
-|-------------------|------------------------------|----------|----------|
-| Logistic Regression | C=1.0, penalty='l2'          | 0.81     | 0.80     |
-| SVM               | kernel='rbf', C=10            | 0.83     | 0.82     |
-| XGBoost           | max_depth=3, learning_rate=0.1| 0.86     | 0.85     |
-| Optimized NN      | Adam, dropout, reg., early stop| **0.89** | **0.88** |
+| Model              | Tuned Params               | Accuracy | F1 Score |
+|-------------------|----------------------------|----------|----------|
+| Logistic Regression | C=1.0, penalty='l2'        | 0.81     | 0.80     |
+| SVM               | kernel='rbf', C=10          | 0.84     | 0.83     |
+| XGBoost           | max_depth=3, lr=0.1         | 0.88     | 0.87     |
+| **Best NN Model** | Adam, L1_L2, dropout, early stop | **0.90** | **0.89** |
+
+---
 
 ## 📈 Visualizations & Error Analysis
 - Confusion Matrix
