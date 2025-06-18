@@ -105,3 +105,6 @@ African Leadership University – BSE
 
 Course: Introduction to Machine Learning
 
+# Demo video link
+
+https://drive.google.com/file/d/1FTY9iOgr3FxiTNrohPTXSPuyus4XFgO7/view?usp=sharing
