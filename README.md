@@ -7,18 +7,28 @@ Premium sporting goods companies lose 15–25% in turnover due to inaccurate sal
 
 ## 📊 Dataset Overview
 
-- **Type**: Synthetic dataset generated using NumPy
-- **Size**: 2,000 records
+- **Type**: Real-word dataset
+- **Size**: 365 records (1 year of sales data)
+- **Source**: Actual e-commerce transactions
 - **Features**:
-  - `price` – Range: 100–1000
-  - `discount` – Range: 0–50%
-  - `marketing_spend` – Range: 0–10,000
-  - `high_sales` – Binary target variable (0 = low, 1 = high)
+  - `date`-Sales transaction 
+
+  - `product_category`-Categories include Sports, Toys, Home Decor, Fashion, Electronics
+
+  - `price` – Ranges from $14.59 (lowest) to $996.91 (highest)
+
+  - `discount` – Percentage discount, spanning 0% to 49.92%
+
+  - `marketing_spend` –Investment in marketing per product, varying from $106.47 to $9972.66
+
+  - `units_sold` - Sales volume, ranging from 5 to 57 units per product
+
+
 
 The dataset was split into:
-- **Training Set**: ~70%
-- **Validation Set**: ~15%
-- **Test Set**: ~15%
+- **Training Set**: ~70% (256 records)
+- **Validation Set**: ~15%(54 records)
+- **Test Set**: ~15%(55 records)
 
 ---
 ## 🧠 Model Implementations
@@ -37,11 +47,12 @@ Implemented with 3–4 different combinations of:
 - Epoch and layer adjustments
 
 
-### 3. Classical ML Models
+### 3. Classical ML Results Summary:
 
-- Logistic Regression
-- SVM
-- XGBoost
+| Model | Accuracy | F1 Score | Recall | Precision | ROC AUC | 
+| Logistic Regression | 0.5067 | 0.5316 | 0.6087 | 0.4719 | 0.5182 | 
+| XGBoost | 0.5267 | 0.4892 | 0.4928 | 0.4857 | 0.5804 | 
+
 (All tuned with `GridSearchCV` or direct hyperparameter setting)
 
 ---
@@ -60,8 +71,10 @@ Implemented with 3–4 different combinations of:
 
 ## ✅ Best Performing Model
 
-- **Neural Network with Adam optimizer, L1_L2 regularization, dropout, and early stopping**
-- Outperformed all classical models in both accuracy and F1 score
+- Neural Network (Adam + L2 Regularization, Early Stopping) provided competitive results compared to classical ML models but did not strongly outperform Logistic Regression across all evaluation metrics.
+- If recall (correctly identifying high-sales products) is the key priority, then Logistic Regression is the better-performing model.
+- If robustness across multiple metrics is preferred, Adam + L2 Regularization with early stopping remains the best NN model.
+
 
 ---
 

@@ -1,0 +1,3 @@
+Model,Best Parameters,Accuracy,Precision,Recall,F1 Score,ROC AUC
+Logistic Regression,"{'C': 0.01, 'class_weight': 'balanced', 'penalty': 'l2', 'solver': 'lbfgs'}",0.5066666666666667,0.47191011235955055,0.6086956521739131,0.5316455696202531,0.5181606727500447
+XGBoost,"{'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 100, 'scale_pos_weight': np.float64(1.0956112852664577)}",0.5266666666666666,0.4857142857142857,0.4927536231884058,0.4892086330935252,0.5804258364644838
